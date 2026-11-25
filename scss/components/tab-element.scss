@@ -1,0 +1,17 @@
+.tab-element {
+
+  &--wrapper {
+    gap: 1.5rem;
+    // border-bottom: 5px solid var(--c-secondary-2);
+    margin-bottom: 2rem;
+  }
+
+  &--item {
+    border-radius: 1rem;
+    font-size: 1.4rem;
+  }
+
+  &--active {
+    text-decoration: underline;
+  }
+}

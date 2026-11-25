@@ -1,0 +1,50 @@
+@use "sass:color";
+
+.admin-button-search {
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+  border-radius: 0.5rem;
+  font-size:1rem;
+  transition: ease all 200ms;  
+  background-color: #EFEFEF;
+  padding: 0 1.2rem;
+
+  &:not(.is-active):hover {
+    background-color:#DFDFDF;
+    color:#333;
+  }
+
+  .text {
+    border:0 none;
+    background:#FFF;
+    border: 1px solid #afafaf;
+    border-radius:0.5rem;
+    padding:0.5rem 1rem;
+    font-size:inherit;
+    &:focus {
+      outline:1px solid #CCC;
+    }
+  }
+  .iconify {
+    font-size:160%;
+  }
+
+  .trigger {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+  }
+
+  .trigger,
+  .trigger-close {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .trigger-close {
+    &:hover {
+      color: color.adjust(red, $lightness: -10%);
+    }
+  }
+}

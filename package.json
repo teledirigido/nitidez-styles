@@ -1,0 +1,13 @@
+{
+  "name": "@nitidez/styles",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "files": ["scss", "components", "nuxt.config.ts"],
+  "peerDependencies": {
+    "nuxt": "^4.0.0",
+    "@nuxt/icon": "^2.0.0",
+    "@iconify-json/mdi": "^1.2.0"
+  }
+}

@@ -1,0 +1,23 @@
+@use "../global/mediaqueries" as mq;
+
+.item-card {
+
+  position: relative;
+  border: 3px solid transparent;
+  transition: ease background-color 200ms, ease border-color 200ms, top ease 200ms;
+
+  &--extra {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+  }
+
+  &.active {
+    background-color: #fff;
+    border: 3px solid var(--c-secondary-2);
+
+    @include mq.desktop {
+      top: -3px;
+    }
+  }
+}

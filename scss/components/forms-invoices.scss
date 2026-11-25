@@ -1,0 +1,63 @@
+.c-form.c-form-invoices {
+
+  line-height: 165%;
+  margin-bottom: 5rem;
+  padding: 4rem;
+
+  .a-action {
+    transition: ease opacity 200ms;
+    opacity: 0.5;
+    font-size: 1rem;
+
+    &:focus,
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+  }
+
+  .add-item {
+    padding-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      display: inline-flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: flex-end;
+
+    }
+
+  }
+
+}
+
+.invoice-summary {
+  &--row {
+
+    display: flex;
+    padding-bottom: 0.5rem;
+    gap: 1rem;
+    align-items: center;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    .label {
+      min-width: 160px;
+    }
+
+    .value {
+      margin-left: auto;
+    }
+  }
+
+  &--row-total {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+}

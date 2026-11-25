@@ -1,0 +1,122 @@
+.table-grid {
+  display: table;
+  width: 100%;
+  // border: 1px solid #DDD;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-weight: 300;
+
+  &.table-grid--secondary {
+    box-shadow: none;
+  }
+
+  .row {
+    display: table-row;
+
+    &.header {
+      text-transform: uppercase;
+      font-size: 80%;
+
+      .cell {
+        // background: rgba(#FAF3EA, 0.9);
+        background-color: #fff;
+        border-bottom: 0 none;
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    &:not(.header):hover .cell {
+      background-color: #f8f8f8;
+    }
+
+    .cell {
+      background-color: #fff;
+    }
+
+    .cell-status {
+      text-align: right;
+      width: 1%;
+      white-space: nowrap;
+    }
+  }
+
+  .row--align-top {
+    .cell {
+      alignment-baseline: text-top;
+    }
+  }
+
+  .row-total {
+    .cell {
+      background-color: transparent;
+    }
+  }
+
+  .cell {
+    max-width: 100%;
+    display: table-cell;
+    padding: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+
+    // Actions container
+    .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      align-items: center;
+      min-width: 120px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .cell-actions {
+    text-align: right;
+    width: 160px;
+
+    .actions-confirm {
+      justify-content: flex-end;
+    }
+  }
+
+  .cell-has-reorder {
+    display: grid;
+    grid-template-areas: "a b" "a c";
+    justify-content: start;
+    column-gap: 1rem;
+
+    .reorder {
+      grid-area: a;
+      padding-top: 0.5rem;
+
+      &:hover {
+        cursor: grab;
+      }
+    }
+
+    .title {
+      grid-area: b;
+    }
+
+    .slug {
+      grid-area: c;
+    }
+  }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+
+    .cell {
+      padding: 0.5rem;
+    }
+
+    .row.header .cell {
+      padding: 0.75rem 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.c-form-steps__indicator {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.c-form-steps__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #DDD;
+  transition: background-color ease 200ms;
+
+  &.is-active,
+  &.is-done {
+    background-color: var(--c-secondary-3);
+  }
+}
+
+.c-form-steps__number {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.c-form-steps__nav {
+  align-items: center;
+}

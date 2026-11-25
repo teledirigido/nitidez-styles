@@ -1,0 +1,15 @@
+.admin-header {
+  &--nav ul {
+    display: flex;
+    list-style: none;
+    gap:1rem;
+  }
+  
+  border-bottom:1px solid #CCC;
+  margin-bottom: 2rem;
+  a {
+    &.router-link-active {
+      text-decoration: underline;
+    }
+  }
+}

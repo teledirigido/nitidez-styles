@@ -1,0 +1,14 @@
+.grid-columns-highlights {
+  overflow: hidden;
+
+  a {
+    display: block;
+    box-sizing: border-box;
+    padding: 2rem;
+    transition: ease background-color 200ms;
+
+    &[href="#"]:hover {
+      background-color: #fff;
+    }
+  }
+}

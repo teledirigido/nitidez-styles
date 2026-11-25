@@ -1,0 +1,144 @@
+.table-invoice-items {
+  display: table;
+  width: 100%;
+  border: 1px solid #CCC;
+  border-radius: 1rem;
+
+  &.no-edit {
+    background-color: #f1f1f1;
+    cursor: default;
+    pointer-events: none;
+    ;
+  }
+
+  .row {
+    display: flex;
+
+    &.header {
+      opacity: 0.5;
+      background-color: #fff;
+      font-size: 80%;
+      line-height: 100%;
+    }
+
+    &:last-child {
+      .cell {
+        border-bottom: 0 none;
+      }
+    }
+  }
+
+  .cell {
+    padding: 1.5rem;
+    // display: table-cell;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+    width: 100%;
+
+    &.cell-item-n {
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 0;
+    }
+
+    &.cell-description {
+      width: 100%;
+      flex: 1;
+    }
+
+    &.cell-qty {
+      max-width: 120px;
+    }
+
+    &.cell-tax {
+      max-width: 100px;
+    }
+
+    &.cell-unit {
+      max-width: 120px;
+    }
+
+    &.cell-total {
+      max-width: 200px;
+    }
+
+    &.cell-actions {
+
+      max-width: 190px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+
+      .action {
+        $bgColor: #f1f1f1;
+
+
+        &.action-delete--trigger {
+          $size: 3rem;
+          transition: ease all 200ms;
+          width: $size;
+          height: $size;
+          line-height: $size;
+          display: inline-block;
+          font-size: 1.5rem;
+          border-radius: 1000px;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background-color: $bgColor;
+          }
+        }
+
+        &.action-delete--confirmation {
+          white-space: nowrap;
+          font-size: 0.9rem;
+          gap: 0.5rem;
+
+          .confirm {
+            background-color: $bgColor;
+            border-radius: 1000px;
+            padding: 0.5rem 0.75rem;
+
+            &:hover {
+              color: #AB3232;
+            }
+          }
+
+          .cancel {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+        }
+      }
+    }
+
+    .text {
+      border: 0 none;
+      border-bottom: 1px solid #CCC;
+      border-radius: 0;
+      padding: 0.85rem 0;
+
+      &:focus {
+        border-bottom: 1px solid #666;
+        background-color: transparent;
+      }
+
+      &:read-only {
+        background-color: #FFF;
+        color: inherit;
+        border-bottom: 0 none;
+        cursor: default;
+        pointer-events: text;
+      }
+    }
+
+  }
+
+}

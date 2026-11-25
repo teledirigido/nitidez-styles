@@ -1,0 +1,44 @@
+.terms-card {
+
+  // background-color: var(--bg-secondary);
+  display: block;
+  padding: 1rem;
+  opacity: 0.5;
+  border-radius: 1rem;
+  transition: ease background 200ms, ease transform 200ms, ease opacity 200ms;
+  transform: scale(0.9);
+  padding: 2rem 1rem;
+
+
+  &--active {
+    transform: scale(1);
+    opacity: 1;
+    background-color: var(--c-secondary-2);
+    color: var(--c-secondary-3);
+  }
+
+  .q-name {
+    display: block;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 300;
+    padding-bottom: 0.5rem;
+  }
+
+  &--disabled {
+    user-select: none;
+  }
+
+  &:not(.terms-card--disabled) {
+    label:hover {
+      cursor: pointer;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--c-secondary-2);
+    }
+  }
+
+
+}

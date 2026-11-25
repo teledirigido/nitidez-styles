@@ -1,0 +1,18 @@
+@use 'mediaqueries' as mq;
+
+.columns-3 {
+  columns: 3;
+
+  label,
+  div {
+    break-inside: avoid-column;
+  }
+
+  @include mq.tablet {
+    columns: 2;
+  }
+
+  @include mq.mobile {
+    columns: auto;
+  }
+}

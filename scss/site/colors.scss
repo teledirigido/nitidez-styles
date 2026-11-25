@@ -1,0 +1,62 @@
+@use 'sass:color';
+
+:root {
+  --c-secondary: #f4e3cd;
+  --c-secondary-2: #e3d7ba;
+  --c-secondary-3: #6c4c30;
+  --c-on-secondary: rgb(111.8, 67.08, 17.2);
+  --c-success: rgb(97, 177, 97);
+  --c-error: #cc0000;
+  --c-white: #FFF;
+  --c-white-2: #f1f1f1
+}
+
+.bg-white {
+  background-color: var(--c-white);
+}
+
+.bg-white-2 {
+  background-color: var(--c-white-2);
+}
+
+.c-white {
+  color: #FFF;
+}
+
+.c-success {
+  color: var(--c-success);
+}
+
+.plan-status--canceled,
+.c-error {
+  color: var(--c-error);
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-lightgray {
+  background-color: #EDEDED;
+}
+
+.bg-secondary {
+  background-color: var(--c-secondary);
+
+  hr {
+    height: 1px;
+    background-color: color-mix(in srgb, var(--c-secondary) 80%, black);
+  }
+}
+
+.bg-secondary-2 {
+  background-color: var(--c-secondary-2);
+}
+
+.bg-success {
+  background-color: var(--c-success);
+}
+
+.bg-error {
+  background-color: var(--c-error);
+}

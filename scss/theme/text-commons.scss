@@ -1,0 +1,38 @@
+@use "../global/mediaqueries" as mq;
+
+%text-heading {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+  font-size: 150%;
+  font-weight: 300;
+
+  @include mq.nondesktop {
+    font-size: 120%;
+  }
+}
+
+%text-list {
+  padding-left: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+%text-pre {
+  background-color: #f1f1f1;
+  padding: 1.5rem;
+  background: #272822;
+  color: #f8f8f2;
+  border-radius: 0.5rem;
+  max-width: 100%;
+  overflow: scroll;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+  border: 1px solid #49483e;
+  border-left: 20px solid #49483e;
+
+  code {
+    background-color: transparent;
+    color: inherit;
+    font-family: inherit;
+  }
+}

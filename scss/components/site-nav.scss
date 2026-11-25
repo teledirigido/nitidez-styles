@@ -1,0 +1,116 @@
+@use "../global/mediaqueries" as mq;
+
+.site-nav {
+  >ul {
+    list-style: none;
+    display: flex;
+  }
+
+  >ul>li>a {
+    padding: 0.75rem 2rem;
+    display: block;
+  }
+
+
+  @include mq.nonMobileMenu {
+    >ul {
+      gap: 1rem;
+
+      >li>a {
+        border-radius: 1000px;
+
+        &:not(.router-link-exact-active):hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .site-nav--account {
+      margin-left: auto;
+    }
+
+    .router-link-exact-active {
+      background-color: #534F46;
+      color: #FFF;
+    }
+  }
+
+  @include mq.mobileMenu {
+    >ul {
+      flex-direction: column;
+      background-color: var(--c-secondary);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    >ul>li {
+      border-top: 1px solid rgba(#FFF, 0.7);
+      border-bottom: 1px solid var(--c-secondary-2);
+      width: 100%;
+      text-align: center;
+
+      &:last-child {
+        border-bottom: 0 none;
+      }
+    }
+
+    >ul>li>a {
+      transition: ease background-color 300ms;
+
+      &.router-link-exact-active,
+      &:hover {
+        background-color: color-mix(in srgb, var(--c-secondary) 93%, black);
+      }
+    }
+  }
+}
+
+.site-nav--trigger {
+  font-size: 2rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include mq.nonMobileMenu {
+    display: none;
+  }
+}
+
+.template-admin .site-nav--account {
+
+  .admin-button-secondary {
+    background-color: transparent;
+  }
+
+  .admin-button--submenu {
+    li {
+      padding-bottom: 0;
+    }
+
+    a:hover {
+      &:not(.router-link-active) {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      text-decoration: none !important;
+    }
+  }
+
+  .logout {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+.nav-fade-enter-active,
+.nav-fade-leave-active {
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.nav-fade-enter-from,
+.nav-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}

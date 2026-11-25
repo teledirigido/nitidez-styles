@@ -1,0 +1,25 @@
+.plan-features {
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-bottom: 0.75rem;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .bg-success {
+    background: var(--c-success);
+    padding: 0.4rem;
+    display: inline-block;
+    line-height: 0;
+    border-radius: 1000000px;
+
+    .iconify {
+      background-color: #FFF;
+      font-size: 1.5rem
+    }
+  }
+
+}
