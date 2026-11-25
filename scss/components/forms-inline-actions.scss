@@ -21,12 +21,12 @@
     }
 
     &.delete {
-      color: color.adjust(red, $lightness: -10%)
+      color: var(--c-danger)
     }
   }
 
   .actions-confirm {
     display: flex;
-    gap: 0.5rem;
+    gap: var(--space-0-5);
   }
 }

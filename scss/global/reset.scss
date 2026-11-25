@@ -1,4 +1,6 @@
+@use 'sass:list';
 @use 'mediaqueries' as mq;
+@use '../tokens/scales';
 
 body,
 div,
@@ -60,13 +62,13 @@ h6 {
 }
 
 ::selection {
-  background: #5FC598;
-  color: white;
+  background: var(--c-selection);
+  color: var(--c-white);
 }
 
 ::-moz-selection {
-  background: #5FC598;
-  color: #fff;
+  background: var(--c-selection);
+  color: var(--c-white);
 }
 
 a {
@@ -85,7 +87,7 @@ hr {
 }
 
 blockquote {
-  margin-left: 25px;
+  margin-left: var(--space-1-5);
 }
 
 fieldset {
@@ -221,17 +223,15 @@ img.block-full {
   line-height: 1.7;
 }
 
-.br-05 {
-  border-radius: 0.5rem;
-}
-
-.br-1 {
-  border-radius: 1rem;
+// Radius utilities, one per step of the radius scale: .br-0.4, .br-1, .br-1.6.
+@each $key, $entry in scales.$radii {
+  .br-#{list.nth($entry, 1)} {
+    border-radius: var(--radius-#{$key});
+  }
 }
 
 .br-max {
-  border-radius: 100000px;
-
+  border-radius: var(--radius-pill);
 }
 
 .a\:hover-underlined {
@@ -266,10 +266,10 @@ ul.style-none {
 }
 
 ul.style-y {
-  padding-left: 1rem;
+  padding-left: var(--space-1);
 
   li {
-    padding-bottom: 0.2rem;
+    padding-bottom: var(--space-0-25);
   }
 }
 
@@ -280,19 +280,15 @@ ul.style-y {
 .ul-nav--bullet {
   li+li::before {
     content: "•";
-    margin-right: 1rem;
+    margin-right: var(--space-1);
   }
 
-  @for $i from 1 through 10 {
-    &.gap-#{$i} li+li::before {
-      margin-right: $i + rem;
+  // The bullet follows the gap-* class on the list (.gap-0.5, .gap-1, ...).
+  @each $key, $entry in scales.$spacing {
+    &.gap-#{list.nth($entry, 1)} li+li::before {
+      margin-right: var(--space-#{$key});
     }
   }
-
-  &.gap-05 li+li::before {
-    margin-right: 0.5rem;
-  }
-
 }
 
 .rotate-45 {

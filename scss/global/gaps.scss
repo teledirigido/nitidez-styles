@@ -1,99 +1,111 @@
+@use 'sass:list';
 @use 'mediaqueries' as mq;
+@use '../tokens/scales';
 
-@for $i from 1 through 10 {
-  .pt-#{$i} {
-    padding-top: $i+rem;
+// Spacing utilities, one per step of the spacing scale (tokens/_scales.scss).
+// Class names keep the decimal point: .pt-0.5, .mb-1.25, .px-2.
+//
+// Shorthands (p, px, py, my) are generated before the sides (pt, pb, mt, mb),
+// so a side class always wins when both are on one element: "p-2 pt-1".
+
+@each $key, $entry in scales.$spacing {
+  $name: list.nth($entry, 1);
+
+  .p-#{$name} {
+    padding: var(--space-#{$key});
   }
 
-  .pb-#{$i} {
-    padding-bottom: $i+rem;
+  .px-#{$name} {
+    padding-left: var(--space-#{$key});
+    padding-right: var(--space-#{$key});
   }
 
-  .mt-#{$i} {
-    margin-top: $i+rem;
+  .py-#{$name} {
+    padding-top: var(--space-#{$key});
+    padding-bottom: var(--space-#{$key});
   }
 
-  .mb-#{$i} {
-    margin-bottom: $i+rem;
-  }
-
-  .p-#{$i} {
-    padding: $i+rem;
-  }
-
-  .my-#{$i} {
-    margin-top: $i+rem;
-    margin-bottom: $i+rem;
-  }
-
-  .py-#{$i} {
-    padding-top: $i+rem;
-    padding-bottom: $i+rem;
-  }
-
-  .px-#{$i} {
-    padding-left: $i+rem;
-    padding-right: $i+rem;
+  .my-#{$name} {
+    margin-top: var(--space-#{$key});
+    margin-bottom: var(--space-#{$key});
   }
 }
 
-.pt-05 {
-  padding-top: 0.5rem;
+@each $key, $entry in scales.$spacing {
+  $name: list.nth($entry, 1);
+
+  .pt-#{$name} {
+    padding-top: var(--space-#{$key});
+  }
+
+  .pb-#{$name} {
+    padding-bottom: var(--space-#{$key});
+  }
+
+  .mt-#{$name} {
+    margin-top: var(--space-#{$key});
+  }
+
+  .mb-#{$name} {
+    margin-bottom: var(--space-#{$key});
+  }
 }
 
-.pb-05 {
-  padding-bottom: 0.5rem;
-}
-
+// Responsive variants, up to 5rem.
 @include mq.nondesktop {
-  @for $i from 1 through 5 {
-    .pt-#{$i}--nondesktop {
-      padding-top: $i+rem;
-    }
+  @each $key, $entry in scales.$spacing {
+    @if list.nth($entry, 2) <= 5rem {
+      $name: list.nth($entry, 1);
 
-    .pb-#{$i}--nondesktop {
-      padding-bottom: $i+rem;
+      .pt-#{$name}--nondesktop {
+        padding-top: var(--space-#{$key});
+      }
+
+      .pb-#{$name}--nondesktop {
+        padding-bottom: var(--space-#{$key});
+      }
     }
   }
 }
 
 @include mq.mobile {
-  @for $i from 1 through 5 {
-    .pt-#{$i}--mobile {
-      padding-top: $i+rem;
-    }
+  @each $key, $entry in scales.$spacing {
+    @if list.nth($entry, 2) <= 5rem {
+      $name: list.nth($entry, 1);
 
-    .p-#{$i}--mobile {
-      padding: $i+rem;
-    }
+      .p-#{$name}--mobile {
+        padding: var(--space-#{$key});
+      }
 
-    .pb-#{$i}--mobile {
-      padding-bottom: $i+rem;
+      .pt-#{$name}--mobile {
+        padding-top: var(--space-#{$key});
+      }
+
+      .pb-#{$name}--mobile {
+        padding-bottom: var(--space-#{$key});
+      }
     }
   }
 
+  // On mobile, large vertical spacing (3 to 8) collapses to 2.
   @for $i from 3 through 8 {
     .py-#{$i} {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding-top: var(--space-2);
+      padding-bottom: var(--space-2);
     }
 
     .pt-#{$i} {
-      padding-top: 2rem;
+      padding-top: var(--space-2);
     }
 
     .mt-#{$i} {
-      margin-top: 2rem;
+      margin-top: var(--space-2);
     }
 
     .mb-#{$i} {
-      margin-bottom: 2rem;
+      margin-bottom: var(--space-2);
     }
   }
-}
-
-.p-05 {
-  padding: 0.5rem;
 }
 
 .mt-auto {
@@ -109,5 +121,5 @@
 }
 
 .pl-1 {
-  padding-left: 1rem;
+  padding-left: var(--space-1);
 }

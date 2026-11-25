@@ -3,10 +3,10 @@
 //
 // Colors: app.config.ts (nitidez.button). The component sets them inline as
 // --button-* custom properties on the element with .admin-button-tone.
-// Shape: --button-radius (0.3rem by default), e.g. a pill on the site.
+// Shape: --button-radius (--radius-0-4 by default), e.g. a pill on the site.
 
 .admin-button-wrapper {
-  --border-radius: var(--button-radius, 0.3rem);
+  --border-radius: var(--button-radius, var(--radius-0-4));
   display: inline-flex;
   position: relative;
   transition: ease background 200ms;
@@ -21,9 +21,9 @@
 }
 
 .admin-button {
-  --padding: var(--field-padding, 1.1rem);
+  --padding: var(--field-padding, var(--space-1));
 
-  padding: var(--padding, 1.1rem);
+  padding: var(--padding, var(--space-1));
   transition: ease all 200ms;
   font-size: 1rem;
 
@@ -33,7 +33,7 @@
   }
 
   &--text {
-    padding: var(--padding, 0.75rem 1.5rem);
+    padding: var(--padding, var(--space-0-75) var(--space-1-5));
   }
 
   &.button-with-icon {
@@ -44,17 +44,12 @@
   &-has-submenu {
 
     .button-with-icon {
-      padding-right: 1rem;
+      padding-right: var(--space-1);
       min-width: 120px;
 
       .iconify {
         margin-left: auto;
       }
-    }
-
-    &:hover {
-      border-end-start-radius: 0;
-      border-end-end-radius: 0;
     }
 
     &:hover .admin-button--submenu {
@@ -64,7 +59,7 @@
 
   &--submenu {
 
-    --padding: 1.3rem;
+    --padding: var(--space-1-25);
 
     display: none;
     position: absolute;
@@ -79,7 +74,7 @@
     }
 
     li {
-      padding-bottom: 0.65rem;
+      padding-bottom: var(--space-0-75);
 
       &:last-child {
         padding-bottom: 0;
@@ -88,7 +83,7 @@
 
     a {
       display: block;
-      padding: var(--padding, 1rem);
+      padding: var(--padding, var(--space-1));
       transition: ease background-color 200ms;
       font-size: 1rem;
     }
@@ -97,8 +92,8 @@
 
   &--submenu-icon {
     border-left: 1px solid;
-    padding-left: 0.6rem;
-    margin-left: 0.6rem;
+    padding-left: var(--space-0-5);
+    margin-left: var(--space-0-5);
   }
 }
 
@@ -110,6 +105,11 @@
   background-color: var(--button-bg);
   color: var(--button-fg);
   border-radius: var(--border-radius);
+
+  &.admin-button-has-submenu:hover {
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+  }
 
   &:hover:not(:disabled) {
     background-color: var(--button-hover-bg, var(--button-bg));
@@ -130,7 +130,7 @@
 .admin-button-wrapper {
   .admin-button--submenu {
     z-index: 10;
-    box-shadow: 0 5px 20px -7px rgba(#000, 0.2);
+    box-shadow: var(--shadow-s);
 
     a:hover {
       text-decoration: underline;
@@ -140,8 +140,8 @@
 
 // Shape of the text type (its colors are in app.config.ts).
 .admin-button-wrapper.admin-button-text {
-  --padding: 0.2rem 1.5rem;
-  border-radius: 1rem;
+  --padding: var(--space-0-25) var(--space-1-5);
+  border-radius: var(--radius-1);
 
   &:hover {
     text-decoration: underline;
@@ -149,5 +149,5 @@
 }
 
 .admin-button-small {
-  padding: 0.5rem 1.2rem;
+  padding: var(--space-0-5) var(--space-1-25);
 }

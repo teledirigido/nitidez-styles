@@ -1,8 +1,8 @@
 @use "../global/mediaqueries" as mq;
 
 %text-heading {
-  padding-top: 2.5rem;
-  padding-bottom: 1rem;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-1);
   font-size: 150%;
   font-weight: 300;
 
@@ -12,23 +12,23 @@
 }
 
 %text-list {
-  padding-left: 2rem;
-  padding-bottom: 1.5rem;
+  padding-left: var(--space-2);
+  padding-bottom: var(--space-1-5);
 }
 
 %text-pre {
-  background-color: #f1f1f1;
-  padding: 1.5rem;
-  background: #272822;
-  color: #f8f8f2;
-  border-radius: 0.5rem;
+  background-color: var(--c-gray-2);
+  padding: var(--space-1-5);
+  background: var(--c-code-bg);
+  color: var(--c-code-fg);
+  border-radius: var(--radius-0-4);
   max-width: 100%;
   overflow: scroll;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
+  font-family: var(--font-mono);
   font-size: 1rem;
   line-height: 1.4;
-  border: 1px solid #49483e;
-  border-left: 20px solid #49483e;
+  border: 1px solid var(--c-code-border);
+  border-left: 20px solid var(--c-code-border);
 
   code {
     background-color: transparent;

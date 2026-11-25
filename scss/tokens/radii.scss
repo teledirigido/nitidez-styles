@@ -1,0 +1,12 @@
+@use "sass:list";
+@use "scales";
+
+// Corner radii (see _scales.scss): --radius-0-2 to --radius-1-6 in 0.2rem steps.
+// Buttons, form fields, chips and the toast share --radius-0-4.
+:root {
+  @each $key, $entry in scales.$radii {
+    --radius-#{$key}: #{list.nth($entry, 2)};
+  }
+
+  --radius-pill: 1000px; // fully rounded ends, .br-max
+}

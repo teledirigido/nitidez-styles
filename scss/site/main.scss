@@ -1,15 +1,14 @@
-@use "../theme/variables" as var;
 @use '../global/functions' as fn;
 @use '../global/mediaqueries' as mq;
 
 body {
-  font-family: var.$bodyFont;
+  font-family: var(--font-body);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-weight: 400;
-  font-size: 18px;
-  background-color: #FAF3EA;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  background-color: var(--c-page);
 }
 
 .content-wrapper--auth {
@@ -20,12 +19,12 @@ body {
   @include fn.contentWrapper(1280px, false);
 
   & {
-    color: #333;
+    color: var(--c-gray-7);
   }
 
   @include mq.mobile {
     &.pt-10 {
-      padding-top: 3rem;
+      padding-top: var(--space-3);
     }
   }
 
@@ -48,7 +47,7 @@ body {
 
   p {
     line-height: 135%;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-0-75);
 
     &:last-child {
       margin-bottom: 0;
@@ -111,9 +110,9 @@ body {
 
 
 .has-bg {
-  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  background-color: #FFF;
+  box-shadow: var(--shadow-m);
+  border-radius: var(--radius-1);
+  background-color: var(--c-white);
   transition: ease padding 300ms;
 }
 

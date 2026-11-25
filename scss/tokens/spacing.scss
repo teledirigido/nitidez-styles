@@ -1,0 +1,10 @@
+@use "sass:list";
+@use "scales";
+
+// Spacing scale (see _scales.scss): --space-0-25 to --space-2 in 0.25rem
+// steps, then --space-3 to --space-10. The p*, m* and gap-* utilities read these.
+:root {
+  @each $key, $entry in scales.$spacing {
+    --space-#{$key}: #{list.nth($entry, 2)};
+  }
+}

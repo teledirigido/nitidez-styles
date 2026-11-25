@@ -16,14 +16,36 @@
   --c-secondary: #f4e3cd;
   --c-secondary-2: #e3d7ba;
   --c-secondary-3: #6c4c30;
+  --c-secondary-4: #534F46; // active item in the desktop nav
   --c-on-secondary: rgb(111.8 67.08 17.2);
 
-  // Neutral
+  // Neutral: page and white, then grays from lightest (1) to darkest (7)
+  --c-page: #FAF3EA; // body background
   --c-white: #FFF;
   --c-gray-1: #f5f5f5;
   --c-gray-2: #ededed;
   --c-gray-3: #ddd;
-  --c-gray-4: #666;
+  --c-gray-4: #ccc;
+  --c-gray-5: #aaa;
+  --c-gray-6: #666;
+  --c-gray-7: #333;
+
+  // Transparent black and white, for lines and hovers that sit on any
+  // background. A black alpha over a color equals mixing that color with black.
+  --c-black-10: rgb(0 0 0 / 0.1);
+  --c-black-20: rgb(0 0 0 / 0.2);
+  --c-black-30: rgb(0 0 0 / 0.3);
+  --c-white-30: rgb(255 255 255 / 0.3);
+  --c-white-70: rgb(255 255 255 / 0.7);
+  --c-overlay: var(--c-black-30); // backdrop behind dialogs and toasts
+
+  // Text selection
+  --c-selection: #5FC598;
+
+  // Code blocks (Monokai)
+  --c-code-bg: #272822;
+  --c-code-fg: #f8f8f2;
+  --c-code-border: #49483e;
 
   // Greens: 1 for solid backgrounds (notifications, status icon, calendar),
   // 2 for text on the light --c-success-bg (chips).
@@ -76,7 +98,7 @@
 
   hr {
     height: 1px;
-    background-color: color-mix(in srgb, var(--c-secondary) 80%, black);
+    background-color: var(--c-black-20);
   }
 }
 

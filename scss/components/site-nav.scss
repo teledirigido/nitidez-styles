@@ -7,17 +7,17 @@
   }
 
   >ul>li>a {
-    padding: 0.75rem 2rem;
+    padding: var(--space-0-75) var(--space-2);
     display: block;
   }
 
 
   @include mq.nonMobileMenu {
     >ul {
-      gap: 1rem;
+      gap: var(--space-1);
 
       >li>a {
-        border-radius: 1000px;
+        border-radius: var(--radius-pill);
 
         &:not(.router-link-exact-active):hover {
           text-decoration: underline;
@@ -30,8 +30,8 @@
     }
 
     .router-link-exact-active {
-      background-color: #534F46;
-      color: #FFF;
+      background-color: var(--c-secondary-4);
+      color: var(--c-white);
     }
   }
 
@@ -39,12 +39,12 @@
     >ul {
       flex-direction: column;
       background-color: var(--c-secondary);
-      border-radius: 1rem;
+      border-radius: var(--radius-1);
       overflow: hidden;
     }
 
     >ul>li {
-      border-top: 1px solid rgba(#FFF, 0.7);
+      border-top: 1px solid var(--c-white-70);
       border-bottom: 1px solid var(--c-secondary-2);
       width: 100%;
       text-align: center;
@@ -59,7 +59,7 @@
 
       &.router-link-exact-active,
       &:hover {
-        background-color: color-mix(in srgb, var(--c-secondary) 93%, black);
+        background-color: var(--c-secondary-2);
       }
     }
   }
@@ -90,7 +90,7 @@
 
     a:hover {
       &:not(.router-link-active) {
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: var(--c-white-30);
       }
 
       text-decoration: none !important;
@@ -98,7 +98,7 @@
   }
 
   .logout {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--c-black-10);
   }
 }
 

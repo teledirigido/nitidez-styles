@@ -1,6 +1,6 @@
-// Fonts
-$bodyFont: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+// Browser root font size, used by functions.scss to convert px to rem at
+// compile time. Stays a Sass variable because CSS variables only exist at runtime.
 $bodyFontSize: 16px;
-$entryContentFontSize: 16px;
 
-// Colors live in scss/site/colors.scss as CSS variables (--c-*).
+// Design tokens (colors, typography, spacing, radii) live in scss/tokens/ as
+// CSS variables.

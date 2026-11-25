@@ -2,15 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.5rem;
-  padding-bottom: 1.5rem;
+  gap: var(--space-0-5);
+  padding-bottom: var(--space-1-5);
 }
 
 .c-form-steps__dot {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background-color: #DDD;
+  background-color: var(--c-gray-3);
   transition: background-color ease 200ms;
 
   &.is-active,
@@ -21,7 +21,7 @@
 
 .c-form-steps__number {
   font-size: 0.9rem;
-  color: #777;
+  color: var(--c-gray-6);
 }
 
 .c-form-steps__nav {

@@ -4,11 +4,11 @@
   a {
     display: block;
     box-sizing: border-box;
-    padding: 2rem;
+    padding: var(--space-2);
     transition: ease background-color 200ms;
 
     &[href="#"]:hover {
-      background-color: #fff;
+      background-color: var(--c-white);
     }
   }
 }

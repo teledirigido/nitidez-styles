@@ -24,12 +24,12 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: var(--space-0-75);
 
     li {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: var(--space-0-5);
     }
 
     .register-pitch__check {
@@ -39,13 +39,13 @@
       justify-content: center;
       width: 16px;
       height: 16px;
-      padding: 6px;
+      padding: var(--space-0-5);
       box-sizing: content-box;
       border-radius: 50%;
       background: var(--c-success);
 
       .iconify {
-        background-color: #fff;
+        background-color: var(--c-white);
       }
     }
   }

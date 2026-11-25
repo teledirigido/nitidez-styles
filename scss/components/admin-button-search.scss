@@ -3,27 +3,27 @@
 .admin-button-search {
   display: flex;
   align-items: center;
-  gap:0.5rem;
-  border-radius: 0.5rem;
+  gap:var(--space-0-5);
+  border-radius: var(--radius-0-4);
   font-size:1rem;
   transition: ease all 200ms;  
-  background-color: #EFEFEF;
-  padding: 0 1.2rem;
+  background-color: var(--c-gray-2);
+  padding: 0 var(--space-1-25);
 
   &:not(.is-active):hover {
-    background-color:#DFDFDF;
-    color:#333;
+    background-color:var(--c-gray-3);
+    color:var(--c-gray-7);
   }
 
   .text {
     border:0 none;
-    background:#FFF;
-    border: 1px solid #afafaf;
-    border-radius:0.5rem;
-    padding:0.5rem 1rem;
+    background:var(--c-white);
+    border: 1px solid var(--c-gray-5);
+    border-radius:var(--radius-0-4);
+    padding:var(--space-0-5) var(--space-1);
     font-size:inherit;
     &:focus {
-      outline:1px solid #CCC;
+      outline:1px solid var(--c-gray-4);
     }
   }
   .iconify {
@@ -44,7 +44,7 @@
   }
   .trigger-close {
     &:hover {
-      color: color.adjust(red, $lightness: -10%);
+      color: var(--c-danger);
     }
   }
 }

@@ -13,7 +13,7 @@
   }
 
   &.active {
-    background-color: #fff;
+    background-color: var(--c-white);
     border: 3px solid var(--c-secondary-2);
 
     @include mq.desktop {

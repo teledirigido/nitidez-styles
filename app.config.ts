@@ -1,18 +1,18 @@
 // Design tokens that apps can extend or override from their own app.config.ts.
 // Nuxt merges this file with the app's, and types the result.
-// Colors only reference the palette in scss/site/colors.scss.
+// Colors only reference the palette in scss/tokens/colors.scss.
 export default defineAppConfig({
   nitidez: {
     // <Chip type="..."> tones. An app adds its own tones under the same key.
     chip: {
-      default: { bg: 'var(--c-gray-2)', fg: 'var(--c-gray-4)' },
+      default: { bg: 'var(--c-gray-2)', fg: 'var(--c-gray-6)' },
       success: { bg: 'var(--c-success-bg)', fg: 'var(--c-green-2)' },
       warning: { bg: 'var(--c-warning-bg)', fg: 'var(--c-warning)' },
       danger: { bg: 'var(--c-danger-bg)', fg: 'var(--c-red-2)' },
       info: { bg: 'var(--c-info-bg)', fg: 'var(--c-info)' },
       outline: {
         bg: 'var(--c-gray-1)',
-        fg: 'var(--c-gray-4)',
+        fg: 'var(--c-gray-6)',
         border: '1px solid var(--c-gray-3)',
       },
       secondary: { bg: 'var(--c-secondary-2)', fg: 'var(--c-secondary-3)' },

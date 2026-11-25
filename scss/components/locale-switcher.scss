@@ -1,9 +1,9 @@
 .locale-switcher {
   // appearance: none;
-  padding: 0.5rem 1rem;
-  padding-right: 1rem;
-  border-radius: 0.2rem;
-  background-color: #FFF;
+  padding: var(--space-0-5) var(--space-1);
+  padding-right: var(--space-1);
+  border-radius: var(--radius-0-2);
+  background-color: var(--c-white);
   border: 1px solid;
   background-color: var(--c-secondary-2);
   border: 0 none;

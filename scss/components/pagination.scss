@@ -2,25 +2,25 @@
   ul {
     display: flex;
     list-style: none;
-    gap: 1rem;
+    gap: var(--space-1);
   }
   li {
     border-color: transparent;
     &.active {
-      border:1px solid #CCC;
+      border:1px solid var(--c-gray-4);
     }
   }
   li.active, 
   li.pagination-arrow span,
   a {
     display: block;
-    padding:0.5rem 1rem;
-    border-radius: 0.25rem;
+    padding:var(--space-0-5) var(--space-1);
+    border-radius: var(--radius-0-2);
   }
   a {
     border:1px solid transparent;
     &:hover {
-      background-color: #DEDEDE;
+      background-color: var(--c-gray-3);
     }
   }
   .disabled {

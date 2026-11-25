@@ -1,29 +1,28 @@
 @use "sass:color";
-@use "../theme/buttons";
 @use "../global/mediaqueries" as mq;
 
 .c-form {
 
   .field-group,
   &.has-bg {
-    box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 1rem;
-    padding: 4rem;
-    background-color: #FFF;
+    box-shadow: var(--shadow-m);
+    border-radius: var(--radius-1);
+    padding: var(--space-4);
+    background-color: var(--c-white);
     transition: ease padding 300ms;
   }
 
   &.c-form-default {
-    --field-padding: 0.85rem 1.5rem;
+    --field-padding: var(--space-0-75) var(--space-1-5);
     transition: box-shadow ease 300ms;
     container-type: inline-size;
 
     @include mq.nondesktop {
-      padding: 1.5rem;
+      padding: var(--space-1-5);
     }
 
     .field {
-      padding-bottom: 1.5rem;
+      padding-bottom: var(--space-1-5);
     }
 
     fieldset .field:last-child {
@@ -32,9 +31,9 @@
   }
 
   &.c-form-inline {
-    --field-padding: 0.4rem;
+    --field-padding: var(--space-0-5);
     display: flex;
-    gap: 1rem;
+    gap: var(--space-1);
   }
 
   .text-small {
@@ -42,7 +41,7 @@
   }
 
   hr {
-    background-color: #AAA;
+    background-color: var(--c-gray-5);
     height: 1px;
     ;
   }
@@ -51,12 +50,12 @@
 
     &-error {
       .error-message {
-        color: color.adjust(red, $lightness: 10%, $saturation: -20%);
+        color: var(--c-danger);
       }
 
       .text {
-        border: 1px solid color.adjust(red, $lightness: 0%, $saturation: -60%);
-        margin-bottom: 0.5rem;
+        border: 1px solid var(--c-danger);
+        margin-bottom: var(--space-0-5);
       }
     }
   }
@@ -65,14 +64,14 @@
     details {
       transition: padding ease 200ms;
       border-left: 5px solid var(--c-secondary);
-      padding-left: 1.5rem;
+      padding-left: var(--space-1-5);
     }
 
     details[open] {
       border-left: 5px solid transparent;
-      background-color: #f1f1f1;
-      padding: 1rem 1.5rem;
-      border-radius: 0.8rem;
+      background-color: var(--c-gray-2);
+      padding: var(--space-1) var(--space-1-5);
+      border-radius: var(--radius-0-8);
     }
   }
 
@@ -84,7 +83,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 2rem;
+    gap: var(--space-2);
   }
 
   .field-submit-with-actions {
@@ -96,7 +95,7 @@
   label {
     display: block;
     width: 100%;
-    padding-bottom: 0.5rem;
+    padding-bottom: var(--space-0-5);
     font-size: 1rem;
 
     &.pb-0 {
@@ -118,12 +117,12 @@
   .text,
   .select,
   .editorjs {
-    border-radius: 0.4rem;
+    border-radius: var(--radius-0-4);
     width: 100%;
     border: 0 none;
-    border: 1px solid #afafaf;
+    border: 1px solid var(--c-gray-5);
     transition: ease background 200ms;
-    background-color: #fff;
+    background-color: var(--c-white);
     font-family: inherit;
   }
 
@@ -137,9 +136,9 @@
   .select,
   .text {
     &:focus {
-      background-color: #f8f8f8;
+      background-color: var(--c-gray-1);
       outline: none;
-      border-color: color.adjust(#afafaf, $lightness: -10%);
+      border-color: var(--c-gray-6);
     }
   }
 
@@ -148,13 +147,13 @@
   }
 
   .has-size-s {
-    padding: 0.5rem 1rem;
+    padding: var(--space-0-5) var(--space-1);
   }
 
   .text {
     &:read-only {
-      background-color: #f1f1f1;
-      color: #666;
+      background-color: var(--c-gray-2);
+      color: var(--c-gray-6);
     }
   }
 
@@ -174,10 +173,10 @@
 
   .radio-group {
     display: inline-flex;
-    border: 1px solid #fff;
-    border-radius: 0.5rem;
+    border: 1px solid var(--c-white);
+    border-radius: var(--radius-0-4);
     overflow: hidden;
-    background-color: #FFF;
+    background-color: var(--c-white);
 
     label {
       width: 100%;
@@ -197,7 +196,7 @@
 
   .radio-group-option {
     display: block;
-    padding: 0.5rem 1.25rem;
+    padding: var(--space-0-5) var(--space-1-25);
     font-weight: 500;
     text-align: center;
     white-space: nowrap;
@@ -215,20 +214,16 @@
 
   .helper {
     display: block;
-    padding-top: 0.5rem;
+    padding-top: var(--space-0-5);
     font-size: 0.9rem;
     opacity: 0.6;
-  }
-
-  .submit {
-    @extend %button;
   }
 
   .field-slug {
     opacity: 0.5;
     font-size: 1rem;
-    margin-top: -1rem;
-    padding-left: 1rem;
+    margin-top: calc(-1 * var(--space-1));
+    padding-left: var(--space-1);
 
     .update-slug {
       text-decoration: underline;
@@ -241,12 +236,12 @@
 
     &-checkbox {
       display: flex;
-      gap: 1rem;
+      gap: var(--space-1);
       flex-wrap: wrap;
 
       label {
         display: inline-flex;
-        gap: 0.5rem;
+        gap: var(--space-0-5);
         padding-bottom: 0;
         align-items: center;
       }
@@ -260,27 +255,27 @@
 
     &--triggers {
       display: flex;
-      gap: 0.5rem;
+      gap: var(--space-0-5);
       font-size: 120%;
       align-items: center;
     }
 
     .label-action-item {
       line-height: 100%;
-      background-color: #f1f1f1;
-      padding: 0.3rem 0.6rem;
-      border-radius: 0.5rem;
+      background-color: var(--c-gray-2);
+      padding: var(--space-0-25) var(--space-0-5);
+      border-radius: var(--radius-0-4);
       transition: ease background-color 200ms;
 
       &:hover:not(.is-active) {
-        background-color: color.adjust(#f1f1f1, $lightness: -5%);
+        background-color: var(--c-gray-3);
       }
 
       &.is-active {
-        background-color: #444;
+        background-color: var(--c-primary);
 
         .iconify {
-          background-color: #FFF;
+          background-color: var(--c-white);
         }
       }
     }
@@ -317,14 +312,14 @@
 .password-strength-bar {
   width: 100%;
   height: 0.75rem;
-  border-radius: 1rem;
+  border-radius: var(--radius-1);
   overflow: hidden;
   position: relative;
 
   &__fill {
     height: 100%;
     border-radius: 0;
-    background: #4caf50;
+    background: var(--c-success);
     transition: width 400ms linear;
   }
 }

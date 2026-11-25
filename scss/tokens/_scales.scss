@@ -1,0 +1,39 @@
+// Scales shared by the token files and the utility classes. Sass only: this
+// file emits no CSS.
+//
+// Each entry is  key: (class name, value).
+// - key: used in variable names, decimal point as a dash (--space-1-25).
+// - class name: used in utility classes, decimal point kept and escaped for
+//   the selector (.pt-1.25 in templates, .pt-1\.25 in CSS).
+
+// 0.25rem steps up to 2rem, then 1rem steps up to 10rem.
+$spacing: (
+  "0-25": ("0\\.25", 0.25rem),
+  "0-5": ("0\\.5", 0.5rem),
+  "0-75": ("0\\.75", 0.75rem),
+  "1": ("1", 1rem),
+  "1-25": ("1\\.25", 1.25rem),
+  "1-5": ("1\\.5", 1.5rem),
+  "1-75": ("1\\.75", 1.75rem),
+  "2": ("2", 2rem),
+  "3": ("3", 3rem),
+  "4": ("4", 4rem),
+  "5": ("5", 5rem),
+  "6": ("6", 6rem),
+  "7": ("7", 7rem),
+  "8": ("8", 8rem),
+  "9": ("9", 9rem),
+  "10": ("10", 10rem),
+);
+
+// 0.2rem steps up to 1.6rem. Fully rounded ends use --radius-pill.
+$radii: (
+  "0-2": ("0\\.2", 0.2rem),
+  "0-4": ("0\\.4", 0.4rem),
+  "0-6": ("0\\.6", 0.6rem),
+  "0-8": ("0\\.8", 0.8rem),
+  "1": ("1", 1rem),
+  "1-2": ("1\\.2", 1.2rem),
+  "1-4": ("1\\.4", 1.4rem),
+  "1-6": ("1\\.6", 1.6rem),
+);

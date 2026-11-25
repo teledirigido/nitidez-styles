@@ -1,4 +1,6 @@
+@use 'sass:list';
 @use 'mediaqueries' as mq;
+@use '../tokens/scales';
 
 //============================================================
 // Grid System
@@ -66,22 +68,28 @@
 //============================================================
 // Grid Gap System
 //============================================================
-@for $i from 1 through 5 {
-  .gap-#{$i} {
-    gap: $i + rem;
-  }
-
-  .gap-column-#{$i} {
-    grid-column-gap: $i + rem;
-  }
-
-  .gap-row-#{$i} {
-    grid-row-gap: $i + rem;
+// One per step of the spacing scale up to 5rem (.gap-0.5, .gap-1.5, .gap-3).
+// gap-* first, so gap-column-* / gap-row-* win when combined.
+@each $key, $entry in scales.$spacing {
+  @if list.nth($entry, 2) <= 5rem {
+    .gap-#{list.nth($entry, 1)} {
+      gap: var(--space-#{$key});
+    }
   }
 }
 
-.gap-05 {
-  gap: 0.5rem;
+@each $key, $entry in scales.$spacing {
+  @if list.nth($entry, 2) <= 5rem {
+    $name: list.nth($entry, 1);
+
+    .gap-column-#{$name} {
+      grid-column-gap: var(--space-#{$key});
+    }
+
+    .gap-row-#{$name} {
+      grid-row-gap: var(--space-#{$key});
+    }
+  }
 }
 
 //============================================================

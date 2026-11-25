@@ -2,8 +2,8 @@
   display: table;
   width: 100%;
   // border: 1px solid #DDD;
-  border-radius: 1.5rem;
-  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-1-6);
+  box-shadow: var(--shadow-m);
   overflow: hidden;
   font-weight: 300;
 
@@ -20,18 +20,18 @@
 
       .cell {
         // background: rgba(#FAF3EA, 0.9);
-        background-color: #fff;
+        background-color: var(--c-white);
         border-bottom: 0 none;
-        padding: 2rem 1.5rem;
+        padding: var(--space-2) var(--space-1-5);
       }
     }
 
     &:not(.header):hover .cell {
-      background-color: #f8f8f8;
+      background-color: var(--c-gray-1);
     }
 
     .cell {
-      background-color: #fff;
+      background-color: var(--c-white);
     }
 
     .cell-status {
@@ -56,14 +56,14 @@
   .cell {
     max-width: 100%;
     display: table-cell;
-    padding: 1.5rem;
-    border-bottom: 1px solid #dee2e6;
+    padding: var(--space-1-5);
+    border-bottom: 1px solid var(--c-gray-3);
     vertical-align: middle;
 
     // Actions container
     .actions {
       display: flex;
-      gap: 1rem;
+      gap: var(--space-1);
       justify-content: flex-end;
       align-items: center;
       min-width: 120px;
@@ -87,11 +87,11 @@
     display: grid;
     grid-template-areas: "a b" "a c";
     justify-content: start;
-    column-gap: 1rem;
+    column-gap: var(--space-1);
 
     .reorder {
       grid-area: a;
-      padding-top: 0.5rem;
+      padding-top: var(--space-0-5);
 
       &:hover {
         cursor: grab;
@@ -112,11 +112,11 @@
     font-size: 0.875rem;
 
     .cell {
-      padding: 0.5rem;
+      padding: var(--space-0-5);
     }
 
     .row.header .cell {
-      padding: 0.75rem 0.5rem;
+      padding: var(--space-0-75) var(--space-0-5);
     }
   }
 }

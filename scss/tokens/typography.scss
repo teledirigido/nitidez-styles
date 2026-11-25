@@ -1,0 +1,27 @@
+@use "../global/mediaqueries" as mq;
+
+// Typography tokens. Below desktop the sizes shrink by redefining the
+// variables, so the .f-size-* classes and any component using them follow.
+:root {
+  --font-body: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  --font-mono: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+
+  --font-size-body: 18px;
+  --font-size-xl: 3.2rem;
+  --font-size-l: 2.8rem;
+  --font-size-m: 2rem;
+  --font-size-sm: 1.5rem;
+  --font-size-s: 1rem;
+  --font-size-xs: 0.85rem;
+
+  @include mq.nondesktop {
+    --font-size-xl: 2rem;
+    --font-size-m: 1.3rem;
+    --font-size-sm: 1.3rem;
+    --font-size-s: 0.85rem;
+  }
+}

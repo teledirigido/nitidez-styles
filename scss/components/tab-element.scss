@@ -1,13 +1,13 @@
 .tab-element {
 
   &--wrapper {
-    gap: 1.5rem;
+    gap: var(--space-1-5);
     // border-bottom: 5px solid var(--c-secondary-2);
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-2);
   }
 
   &--item {
-    border-radius: 1rem;
+    border-radius: var(--radius-1);
     font-size: 1.4rem;
   }
 

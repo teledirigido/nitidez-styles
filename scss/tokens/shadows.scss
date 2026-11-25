@@ -1,0 +1,6 @@
+// Shadows.
+:root {
+  --shadow-s: 0 5px 20px -7px var(--c-black-20); // dropdowns: button submenu
+  --shadow-m: 0 20px 40px var(--c-black-10);     // cards: .has-bg, forms, table-details
+  --shadow-l: 0 8px 40px rgb(0 0 0 / 0.18);      // floating panels: toast
+}

@@ -19,7 +19,7 @@
 
   @include mq.nonmobile {
     ul {
-      gap: 1.5rem;
+      gap: var(--space-1-5);
 
       li:last-child {
         margin-left: auto;
@@ -56,19 +56,19 @@
     li:last-child {
       a {
         border-bottom: 0 none;
-        background-color: #eee;
-        border-radius: 0.5rem;
-        border: 1px solid #CCC;
+        background-color: var(--c-gray-2);
+        border-radius: var(--radius-0-4);
+        border: 1px solid var(--c-gray-4);
       }
     }
 
     a {
       display: flex;
-      padding: 1rem 0.5rem;
-      border-bottom: 1px solid #CCC;
+      padding: var(--space-1) var(--space-0-5);
+      border-bottom: 1px solid var(--c-gray-4);
 
       &:hover {
-        background-color: #f8f8f8;
+        background-color: var(--c-gray-1);
         text-decoration: none;
       }
     }

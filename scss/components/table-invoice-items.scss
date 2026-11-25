@@ -1,11 +1,11 @@
 .table-invoice-items {
   display: table;
   width: 100%;
-  border: 1px solid #CCC;
-  border-radius: 1rem;
+  border: 1px solid var(--c-gray-4);
+  border-radius: var(--radius-1);
 
   &.no-edit {
-    background-color: #f1f1f1;
+    background-color: var(--c-gray-2);
     cursor: default;
     pointer-events: none;
     ;
@@ -16,7 +16,7 @@
 
     &.header {
       opacity: 0.5;
-      background-color: #fff;
+      background-color: var(--c-white);
       font-size: 80%;
       line-height: 100%;
     }
@@ -29,9 +29,9 @@
   }
 
   .cell {
-    padding: 1.5rem;
+    padding: var(--space-1-5);
     // display: table-cell;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--c-gray-3);
     vertical-align: middle;
     width: 100%;
 
@@ -83,7 +83,7 @@
           line-height: $size;
           display: inline-block;
           font-size: 1.5rem;
-          border-radius: 1000px;
+          border-radius: var(--radius-pill);
           text-align: center;
           display: flex;
           align-items: center;
@@ -97,15 +97,15 @@
         &.action-delete--confirmation {
           white-space: nowrap;
           font-size: 0.9rem;
-          gap: 0.5rem;
+          gap: var(--space-0-5);
 
           .confirm {
             background-color: $bgColor;
-            border-radius: 1000px;
-            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-pill);
+            padding: var(--space-0-5) var(--space-0-75);
 
             &:hover {
-              color: #AB3232;
+              color: var(--c-danger);
             }
           }
 
@@ -121,17 +121,17 @@
 
     .text {
       border: 0 none;
-      border-bottom: 1px solid #CCC;
+      border-bottom: 1px solid var(--c-gray-4);
       border-radius: 0;
-      padding: 0.85rem 0;
+      padding: var(--space-0-75) 0;
 
       &:focus {
-        border-bottom: 1px solid #666;
+        border-bottom: 1px solid var(--c-gray-6);
         background-color: transparent;
       }
 
       &:read-only {
-        background-color: #FFF;
+        background-color: var(--c-white);
         color: inherit;
         border-bottom: 0 none;
         cursor: default;

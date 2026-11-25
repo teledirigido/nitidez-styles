@@ -40,19 +40,19 @@ const tone = computed(() => tones[props.type]);
 
 <style>
 .chip {
-  padding: 0.5rem 1.2rem;
+  padding: var(--space-0-5) var(--space-1-25);
   letter-spacing: 1px;
   font-size: 0.8rem;
   font-weight: bold;
-  border-radius: var(--chip-radius, 0.5rem);
+  border-radius: var(--chip-radius, var(--radius-0-4));
   text-align: center;
   line-height: 150%;
-  background-color: var(--chip-bg, #EDEDED);
-  color: var(--chip-fg, #777);
+  background-color: var(--chip-bg, var(--c-gray-2));
+  color: var(--chip-fg, var(--c-gray-6));
   border: var(--chip-border, none);
 }
 
 .chip--small {
-  padding: 0.3rem 1rem;
+  padding: var(--space-0-25) var(--space-1);
 }
 </style>

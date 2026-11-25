@@ -1,8 +1,8 @@
 .c-form.c-form-invoices {
 
   line-height: 165%;
-  margin-bottom: 5rem;
-  padding: 4rem;
+  margin-bottom: var(--space-5);
+  padding: var(--space-4);
 
   .a-action {
     transition: ease opacity 200ms;
@@ -18,13 +18,13 @@
   }
 
   .add-item {
-    padding-right: 1rem;
+    padding-right: var(--space-1);
     display: flex;
     justify-content: flex-end;
 
     a {
       display: inline-flex;
-      gap: 0.5rem;
+      gap: var(--space-0-5);
       align-items: center;
       justify-content: flex-end;
 
@@ -38,8 +38,8 @@
   &--row {
 
     display: flex;
-    padding-bottom: 0.5rem;
-    gap: 1rem;
+    padding-bottom: var(--space-0-5);
+    gap: var(--space-1);
     align-items: center;
 
     &:last-child {
@@ -56,8 +56,8 @@
   }
 
   &--row-total {
-    border-top: 1px solid #333;
-    padding-top: 1rem;
-    margin-top: 1rem;
+    border-top: 1px solid var(--c-gray-7);
+    padding-top: var(--space-1);
+    margin-top: var(--space-1);
   }
 }

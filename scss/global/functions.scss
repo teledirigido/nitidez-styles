@@ -14,8 +14,8 @@
   position: relative;
 
   @media screen and (max-width: #{$value+50px}) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
   }
 
   @if $addMobileMaxWidth {

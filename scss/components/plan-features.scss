@@ -3,21 +3,21 @@
 
   li {
     position: relative;
-    padding-bottom: 0.75rem;
+    padding-bottom: var(--space-0-75);
     align-items: center;
     display: flex;
-    gap: 1rem;
+    gap: var(--space-1);
   }
 
   .bg-success {
     background: var(--c-success);
-    padding: 0.4rem;
+    padding: var(--space-0-5);
     display: inline-block;
     line-height: 0;
-    border-radius: 1000000px;
+    border-radius: var(--radius-pill);
 
     .iconify {
-      background-color: #FFF;
+      background-color: var(--c-white);
       font-size: 1.5rem
     }
   }
