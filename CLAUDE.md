@@ -91,7 +91,7 @@ npx nuxi typecheck
 
 - `--install-links` copies instead of symlinking. With a symlink, TypeScript resolves `vue` from this repo and every component prop becomes `any`.
 - The `rm -rf` is needed because npm skips the copy when the version is unchanged.
-- No HMR: Nuxt's Vite watcher ignores `node_modules`. Reload after reinstalling.
+- No HMR: Nuxt's Vite watcher ignores `node_modules`. After reinstalling, restart `npm run dev` in the consumer, not just the browser: Nuxt builds the merged `app.config` at startup, so a reload keeps the old tones while the CSS already has the new palette (for example a chip pointing at a renamed `--c-gray-*`). If the stale value survives a restart, `rm -rf .nuxt` and start again.
 - In this repo, `npm run prepare:types` generates `.nuxt/` so the editor knows Nuxt auto-imports.
 - Quick SCSS check without the app: `npx sass --no-source-map scss/admin.scss > /dev/null` (same for `auth.scss`).
 
