@@ -1,0 +1,153 @@
+// Shared by AdminButton and SubmitButton (replaces admin/admin-button.scss and
+// public/button.scss).
+//
+// Colors: app.config.ts (nitidez.button). The component sets them inline as
+// --button-* custom properties on the element with .admin-button-tone.
+// Shape: --button-radius (0.3rem by default), e.g. a pill on the site.
+
+.admin-button-wrapper {
+  --border-radius: var(--button-radius, 0.3rem);
+  display: inline-flex;
+  position: relative;
+  transition: ease background 200ms;
+  font-size: 1rem;
+  line-height: 100%;
+
+  &.admin-button--disabled,
+  .admin-button--disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.admin-button {
+  --padding: var(--field-padding, 1.1rem);
+
+  padding: var(--padding, 1.1rem);
+  transition: ease all 200ms;
+  font-size: 1rem;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  &--text {
+    padding: var(--padding, 0.75rem 1.5rem);
+  }
+
+  &.button-with-icon {
+    padding: var(--padding);
+  }
+
+  // Submenu
+  &-has-submenu {
+
+    .button-with-icon {
+      padding-right: 1rem;
+      min-width: 120px;
+
+      .iconify {
+        margin-left: auto;
+      }
+    }
+
+    &:hover {
+      border-end-start-radius: 0;
+      border-end-end-radius: 0;
+    }
+
+    &:hover .admin-button--submenu {
+      display: block;
+    }
+  }
+
+  &--submenu {
+
+    --padding: 1.3rem;
+
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    overflow: hidden;
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      padding-bottom: 0.65rem;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    a {
+      display: block;
+      padding: var(--padding, 1rem);
+      transition: ease background-color 200ms;
+      font-size: 1rem;
+    }
+
+  }
+
+  &--submenu-icon {
+    border-left: 1px solid;
+    padding-left: 0.6rem;
+    margin-left: 0.6rem;
+  }
+}
+
+// Tone. Two classes of specificity, like the old `.template-admin .admin-button-primary`,
+// so rules such as `.form-inline-actions button { background: none }` keep losing.
+// AdminButton puts .admin-button-tone on the wrapper, SubmitButton on the <button>.
+.admin-button-wrapper.admin-button-tone,
+.admin-button-wrapper .admin-button-tone {
+  background-color: var(--button-bg);
+  color: var(--button-fg);
+  border-radius: var(--border-radius);
+
+  &:hover:not(:disabled) {
+    background-color: var(--button-hover-bg, var(--button-bg));
+    color: var(--button-hover-fg, var(--button-fg));
+    cursor: pointer;
+  }
+
+  &:is(button) {
+    border: 0 none;
+  }
+
+  .admin-button--submenu {
+    background-color: var(--button-submenu-bg, var(--button-bg));
+    color: var(--button-submenu-fg, var(--button-fg));
+  }
+}
+
+.admin-button-wrapper {
+  .admin-button--submenu {
+    z-index: 10;
+    box-shadow: 0 5px 20px -7px rgba(#000, 0.2);
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Shape of the text type (its colors are in app.config.ts).
+.admin-button-wrapper.admin-button-text {
+  --padding: 0.2rem 1.5rem;
+  border-radius: 1rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.admin-button-small {
+  padding: 0.5rem 1.2rem;
+}

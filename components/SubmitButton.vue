@@ -1,8 +1,8 @@
 <template>
-  <div class="admin-button-wrapper">
+  <div class="admin-button-wrapper" :style="toneStyle">
     <button
       type="submit"
-      class="admin-button admin-button-primary admin-button--text"
+      class="admin-button admin-button-tone admin-button-primary admin-button--text"
       :class="icon || prependIcon ? 'button-with-icon' : ''"
       :disabled="disabled"
     >
@@ -25,4 +25,6 @@ const props = withDefaults(
     disabled: false,
   },
 );
+
+const toneStyle = useButtonTone(() => 'primary');
 </script>

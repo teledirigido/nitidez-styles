@@ -1,14 +1,49 @@
 @use 'sass:color';
 
+// Palette. Every color in the package (and in app.config.ts tones) reads these
+// variables; an app or site changes its palette by redefining them.
+//
+// Semantic naming: --c-x is the text / icon color, --c-x-bg the background
+// that goes behind it (chips, soft highlights).
 :root {
+  // Primary
+  --c-primary: #444;
+  --c-primary-2: #333;
+  --c-primary-3: #111;
+  --c-on-primary: #FFF;
+
+  // Secondary
   --c-secondary: #f4e3cd;
   --c-secondary-2: #e3d7ba;
   --c-secondary-3: #6c4c30;
-  --c-on-secondary: rgb(111.8, 67.08, 17.2);
-  --c-success: rgb(97, 177, 97);
-  --c-error: #cc0000;
+  --c-on-secondary: rgb(111.8 67.08 17.2);
+
+  // Neutral
   --c-white: #FFF;
-  --c-white-2: #f1f1f1
+  --c-gray-1: #f5f5f5;
+  --c-gray-2: #ededed;
+  --c-gray-3: #ddd;
+  --c-gray-4: #666;
+
+  // Greens: 1 for solid backgrounds (notifications, status icon, calendar),
+  // 2 for text on the light --c-success-bg (chips).
+  --c-green-1: rgb(97 177 97);
+  --c-green-2: #407734;
+
+  // Reds: 1 for text and solid backgrounds (error messages, status icon,
+  // calendar), 2 for text on the light --c-danger-bg (chips).
+  --c-red-1: #cc0000;
+  --c-red-2: #9a1a1a;
+
+  // Semantic
+  --c-success: var(--c-green-1);
+  --c-success-bg: #A2E394;
+  --c-warning: #99894F;
+  --c-warning-bg: #FFE486;
+  --c-danger: var(--c-red-1);
+  --c-danger-bg: #FFBCBC;
+  --c-info: #1a6a9a;
+  --c-info-bg: #C8E6FA;
 }
 
 .bg-white {
@@ -16,11 +51,11 @@
 }
 
 .bg-white-2 {
-  background-color: var(--c-white-2);
+  background-color: var(--c-gray-2);
 }
 
 .c-white {
-  color: #FFF;
+  color: var(--c-white);
 }
 
 .c-success {
@@ -28,16 +63,12 @@
 }
 
 .plan-status--canceled,
-.c-error {
-  color: var(--c-error);
-}
-
-.bg-white {
-  background-color: #fff;
+.c-danger {
+  color: var(--c-danger);
 }
 
 .bg-lightgray {
-  background-color: #EDEDED;
+  background-color: var(--c-gray-2);
 }
 
 .bg-secondary {
@@ -57,6 +88,6 @@
   background-color: var(--c-success);
 }
 
-.bg-error {
-  background-color: var(--c-error);
+.bg-danger {
+  background-color: var(--c-danger);
 }

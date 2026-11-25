@@ -1,9 +1,10 @@
 <template>
   <div
-    :class="`admin-button-wrapper admin-button-${type} 
+    :class="`admin-button-wrapper admin-button-tone admin-button-${type}
       ${$slots.submenu ? 'admin-button-has-submenu' : ''}
       ${disabled ? 'admin-button--disabled' : ''}
       `"
+    :style="toneStyle"
   >
     <NuxtLink
       class="admin-button--text"
@@ -38,11 +39,15 @@
   </div>
 </template>
 <script lang="ts" setup>
+// Tones come from app.config.ts (nitidez.button): the layer ships primary,
+// secondary and text, and each app can add its own.
+type ButtonTone = keyof ReturnType<typeof useAppConfig>['nitidez']['button'];
+
 defineOptions({ inheritAttrs: false });
 const props = withDefaults(
   defineProps<{
     disabled?: boolean | undefined;
-    type?: 'primary' | 'secondary' | 'text';
+    type?: ButtonTone;
     text?: string;
     href?: string;
     icon?: string;
@@ -55,6 +60,9 @@ const props = withDefaults(
     type: 'primary',
   },
 );
+
+const toneStyle = useButtonTone(() => props.type);
+
 function handleClick(e: MouseEvent) {
   if (props.onClick) {
     e.preventDefault();

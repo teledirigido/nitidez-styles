@@ -32,7 +32,7 @@ const icons: Record<StatusIconType, string> = {
 const bgClasses: Record<StatusIconType, string> = {
   success: 'bg-success c-white',
   pending: 'bg-secondary',
-  error: 'bg-error c-white',
+  error: 'bg-danger c-white',
 };
 
 const icon = computed(() => props.icon ?? icons[props.type]);
